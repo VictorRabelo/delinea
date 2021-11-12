@@ -19,7 +19,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 // Helpers
 import { JwtInterceptor } from './helpers/jwt.interceptor';
-import { HttpProgressInterceptor } from './helpers/http-progress.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 
 // Ngx
@@ -67,7 +66,6 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: HttpProgressInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: LocationStrategy, useClass: HashLocationStrategy }
