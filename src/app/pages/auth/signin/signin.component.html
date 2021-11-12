@@ -1,0 +1,59 @@
+<div class="hold-transition login-page">
+  <div class="login-box">
+
+    <!-- /.login-logo -->
+    <div class="card card-load card-outline card-primary">
+      <div class="card-header text-center">
+        <img src="/assets/img/delinea.jpeg" class="logo" alt="Logo Delinea">
+      </div>
+
+      <div class="card-body">
+        <form #form="ngForm" (ngSubmit)="submit(form)" (keydown.enter)="$event.preventDefault()" class="mb-0">
+          
+          <div class="input-group mb-3">
+            <input class="form-control" required type="text" name="login" [(ngModel)]="dados.login" #login="ngModel"
+              placeholder="Digite seu Login" 
+              [ngClass]="{'is-invalid': !login.valid && (login.touched || form.submitted)}">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="input-group mb-3">
+            <input class="form-control" required type="password" name="password" [(ngModel)]="dados.password" #password="ngModel"
+              placeholder="Digite sua Senha" 
+              [ngClass]="{'is-invalid': !password.valid && (password.touched || form.submitted)}">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-8">
+              <div class="icheck-primary">
+                <input type="checkbox" id="remember">
+                <label for="remember">
+                  Me lembrar
+                </label>
+              </div>
+            </div>
+          
+            <div class="col-4">
+              <button type="submit" class="btn btn-primary btn-block">
+                <p class="d-inline" *ngIf="!loading">Entrar</p>
+              </button>
+            </div>
+          </div>
+          <div class="card-loader" *ngIf="loading"><i class="fas fa-sync-alt anim-rotate"></i></div>
+        </form>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+    <p-toast position="bottom-center" key="bc"></p-toast>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-6">
+                    <div class="card" [ngClass]="{'card-load': loading}">
+                        <div class="card-body">
+                            <form #form="ngForm" (ngSubmit)="submit(form)" (keydown.enter)="$event.preventDefault()">
+                                <div class="row">
+                                    <div class="col-sm-6 form-group">
+                                        <label>Nova Senha:</label>
+                                        <input type="password" class="form-control" name="password"
+                                            [(ngModel)]="dados.password" #password>
+                                    </div>
+                                    <div class="col-sm-6 form-group">
+                                        <label>Confirma Senha:</label>
+                                        <input type="password" class="form-control" name="confirm_password"
+                                            [(ngModel)]="dados.confirm_password" #confirm_password="ngModel">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="ml-auto col-sm-3">
+                                        <button type="submit" class="btn btn-primary">Alterar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-loader" *ngIf="loading"><i class="fas fa-sync-alt anim-rotate"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p-toast position="bottom-center" key="bc"></p-toast>
+</div>

@@ -1,0 +1,11 @@
+.logo{
+    width: 70%;
+    height: 200px;
+}
+
+@media (max-width: 480px){
+    .ancore-logo{
+        left: 60px;
+    }
+
+}
