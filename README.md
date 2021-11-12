@@ -14,4 +14,4 @@ Execute o comando `ng serve` no prompt de comando para rodar o servidor de desen
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute o comando `ng build` para buildar o projeto. Ao executar o comando o Angular cria um diretório `dist/` na raiz do projeto. Use a flag `--prod` fazer uma build para o servidor.
